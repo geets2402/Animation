@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text Animation</title>
+    <style>
+    .container{
+        
+        overflow: hidden;
+        height: 60px;
+        width: 100%;
+        border: 5px solid white ;
+        border-bottom-color:  hotpink;
+          }
+          .box{
+            animation:text 6s infinite ease-in;
+            font-size: 50px;
+          }
+          @keyframes text{
+            0%{
+                transform: translateY(0%);
+            }
+            25%{
+                transform: translateY(-100%);
+            }
+            50%{
+                transform: translateY(-200%);
+            }
+            75%{
+                transform: translateY(-300%);
+            }
+           100%{
+                transform: translateY( -400%);
+            }
+
+          }
+          
+           .cont{
+            display: flex;
+           }
+          .card{
+            height: 300px;
+            width: 600px;
+            background:linear-gradient(lightpink, darkblue );
+            margin:50px;
+            animation: Animate 3s linear;
+            animation-timeline: view();
+            animation-range: entry 0 cover 50%;
+            border-radius: 20px;
+        }
+        .card2{
+            height: 300px;
+            width: 600px;
+            background:linear-gradient(lightpink, darkblue );
+            margin:50px;
+            animation: Animate2 3s linear;
+            animation-timeline: view();
+            animation-range: entry 0 cover 50%;
+            border-radius: 20px;
+        }
+        @keyframes Animate{
+            from{
+                opacity: 0;
+                transform: scale(0.5);
+                transform: translateX(-100px);
+                clip-path: inset(0 100% 0 100%);
+            }
+            to{
+                opacity: 1;
+                transform: scale(1);
+                transform: translateX(0px);
+                 clip-path: inset(0 100 0 100); 
+            }
+        }
+        @keyframes Animate2{
+            from{
+                opacity: 0;
+                transform: scale(0.5);
+                transform: translateX(100px);
+                clip-path: inset(0 100% 0 100%);
+            }
+            to{
+                opacity: 1;
+                transform: scale(1);
+                transform: translateX(0px);
+                 clip-path: inset(0 100 0 100); 
+            }
+        }
+        .images{
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: auto;
+           
+
+        }
+        
+        img{
+            height: 100px;
+            z-index: 2;
+        }
+        
+        .images::before{
+            content: "";
+            height: 1000px;
+            width: 1000px;
+            position: absolute;
+            background: conic-gradient(hotpink, lightblue, lightcoral, lightseagreen);
+            animation: rotat 5s infinite ease-in;
+        }
+        @keyframes rotat{
+            from{
+
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .images::after{
+            
+            content: "";
+            background-color: antiquewhite;
+            inset: 10px;
+            border-radius: 20px;
+            position: absolute;
+        }
+        
+</style>
+</head>
+<body>
+   <div class="container">
+    <div class="box">
+         Anju
+    </div>
+    <div class="box">
+        suraj
+    </div>
+    <div class="box">
+        Pratham
+    </div>
+    <div class="box">
+        Simran
+    </div>
+   </div>
+ <div class="cont">
+    <div class="class">
+    <div class="card"></div>
+    <div class="card"></div> 
+    <div class="card"></div>
+    <div class="card"></div> 
+    <div class="card"></div>
+</div>
+<div class="class2">
+    <div class="card2"></div>
+    <div class="card2"></div> 
+    <div class="card2"></div>
+    <div class="card2"></div> 
+    <div class="card2"></div>
+
+</div>
+</div>
+<div class="images">
+   
+    <img src="https://thumbs.dreamstime.com/b/d-icon-avatar-cute-smiling-woman-cartoon-hipster-character-people-close-up-portrait-isolated-transparent-png-background-352288894.jpg" alt="">
+   
+</div>
+
+</body>
+</html>
